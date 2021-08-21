@@ -1,0 +1,126 @@
+DefFun tetra n
+  Begin
+    Push <unit>;
+    DefFun aux n
+      DefFun aux_n1 n1
+        DefFun aux_n2 n2
+          DefFun aux_n3 n3
+            DefFun aux_n4 n4
+              Begin
+                Push <unit>;
+                Push 0;
+                Push n;
+                Ask;
+                Lte;
+                If
+                  Begin
+                    Push <unit>;
+                    Push n1;
+                    Ask;
+                  End;
+                Else
+                  Begin
+                    Push <unit>;
+                    Push aux;
+                    Ask;
+                    Push 1;
+                    Push n;
+                    Ask;
+                    Sub;
+                    Call;
+                    Push n2;
+                    Ask;
+                    Call;
+                    Push n3;
+                    Ask;
+                    Call;
+                    Push n4;
+                    Ask;
+                    Call;
+                    Push n4;
+                    Ask;
+                    Push n3;
+                    Ask;
+                    Push n2;
+                    Ask;
+                    Push n1;
+                    Ask;
+                    Add;
+                    Add;
+                    Add;
+                    Call;
+                  End;
+                End;
+              End;
+            End;
+            Push aux_n4;
+            Ask;
+          End;
+          Push aux_n3;
+          Ask;
+        End;
+        Push aux_n2;
+        Ask;
+      End;
+      Push aux_n1;
+      Ask;
+    End;
+    Push aux;
+    Ask;
+    Push n;
+    Ask;
+    Call;
+    Push 0;
+    Call;
+    Push 1;
+    Call;
+    Push 1;
+    Call;
+    Push 2;
+    Call;
+  End;
+End;
+DefFun loop n
+  Begin
+    Push <unit>;
+    Push 0;
+    Push n;
+    Ask;
+    Gt;
+    If
+      Begin
+        Push <unit>;
+        Push n;
+        Ask;
+        Log;
+        Push tetra;
+        Ask;
+        Push n;
+        Ask;
+        Call;
+        Log;
+        Push <unit>;
+        Push loop;
+        Ask;
+        Push 1;
+        Push n;
+        Ask;
+        Sub;
+        Call;
+        Pop;
+      End;
+    Else
+      Push <unit>;
+    End;
+    Push <unit>;
+  End;
+End;
+Push loop;
+Ask;
+Push 50;
+Call;
+Pop;
+
+------------------------------
+
+(["50"; "52298426843184"; "49"; "27131904192124"; "48"; "14075762303480"; "47"; "7302365621709"; "46"; "3788394725871"; "45"; "1965381541064"; "44"; "1019620414836"; "43"; "528968939938"; "42"; "274423830033"; "41"; "142368356257"; "40"; "73859288608"; "39"; "38317465040"; "38"; "19878720128"; "37"; "10312882481"; "36"; "5350220959"; "35"; "2775641472"; "34"; "1439975216"; "33"; "747044834"; "32"; "387559437"; "31"; "201061985"; "30"; "104308960"; "29"; "54114452"; "28"; "28074040"; "27"; "14564533"; "26"; "7555935"; "25"; "3919944"; "24"; "2033628"; "23"; "1055026"; "22"; "547337"; "21"; "283953"; "20"; "147312"; "19"; "76424"; "18"; "39648"; "17"; "20569"; "16"; "10671"; "15"; "5536"; "14"; "2872"; "13"; "1490"; "12"; "773"; "11"; "401"; "10"; "208"; "9"; "108"; "8"; "56"; "7"; "29"; "6"; "15"; "5"; "8"; "4"; "4"; "3"; "2"; "2"; "1"; "1"; "1"], 0)

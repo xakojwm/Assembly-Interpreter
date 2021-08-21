@@ -1,0 +1,47 @@
+DefFun sum n
+  Begin
+    Push <unit>;
+    Push 0;
+    Push n;
+    Ask;
+    Gt;
+    If
+      Begin
+        Push <unit>;
+        Push sum;
+        Ask;
+        Push 1;
+        Push n;
+        Ask;
+        Sub;
+        Call;
+        Push n;
+        Ask;
+        Add;
+      End;
+    Else
+      Begin
+        Push <unit>;
+        Push n;
+        Ask;
+      End;
+    End;
+  End;
+End;
+Push sum;
+Ask;
+Push 10;
+Call;
+Log;
+Push <unit>;
+Push sum;
+Ask;
+Push 10;
+Neg;
+Call;
+Log;
+Push <unit>;
+
+------------------------------
+
+(["55"; "-10"], 0)

@@ -1,0 +1,57 @@
+DefFun add x
+  DefFun add_y y
+    Begin
+      Push <unit>;
+      Push y;
+      Ask;
+      Push x;
+      Ask;
+      Add;
+    End;
+  End;
+  Push add_y;
+  Ask;
+End;
+DefFun div x
+  DefFun div_y y
+    Begin
+      Push <unit>;
+      Push y;
+      Ask;
+      Push x;
+      Ask;
+      Div;
+    End;
+  End;
+  Push div_y;
+  Ask;
+End;
+Push add;
+Ask;
+Push 10;
+Call;
+Push add10;
+Let;
+Push add10;
+Ask;
+Push 10;
+Call;
+Log;
+Push <unit>;
+Push div;
+Ask;
+Push 10;
+Call;
+Push 20;
+Push add10;
+Ask;
+Push 10;
+Call;
+Sub;
+Call;
+Log;
+Push <unit>;
+
+------------------------------
+
+(["20"], 3)

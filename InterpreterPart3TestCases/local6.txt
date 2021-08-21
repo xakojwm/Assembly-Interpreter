@@ -1,0 +1,59 @@
+DefFun fact n
+  Begin
+    Push <unit>;
+    DefFun aux n
+      DefFun aux_acc acc
+        Begin
+          Push <unit>;
+          Push 0;
+          Push n;
+          Ask;
+          Lte;
+          If
+            Begin
+              Push <unit>;
+              Push acc;
+              Ask;
+            End;
+          Else
+            Begin
+              Push <unit>;
+              Push aux;
+              Ask;
+              Push 1;
+              Push n;
+              Ask;
+              Sub;
+              Call;
+              Push acc;
+              Ask;
+              Push n;
+              Ask;
+              Mul;
+              Call;
+            End;
+          End;
+        End;
+      End;
+      Push aux_acc;
+      Ask;
+    End;
+    Push aux;
+    Ask;
+    Push n;
+    Ask;
+    Call;
+    Push 1;
+    Call;
+  End;
+End;
+Push fact;
+Ask;
+Push 10;
+Call;
+Log;
+Push <unit>;
+
+------------------------------
+
+(["3628800"], 0)

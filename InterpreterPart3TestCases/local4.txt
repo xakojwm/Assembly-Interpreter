@@ -1,0 +1,68 @@
+Try
+  Begin
+    Push <unit>;
+    Push 20;
+    Throw;
+  End;
+  
+Catch
+  Push n;
+  Let;
+  Begin
+    Push <unit>;
+    Push 1;
+    Push n;
+    Ask;
+    Eq;
+    If
+      Push "typeError";
+      Log;
+      Push <unit>;
+    Else
+      Push <unit>;
+    End;
+    Push 2;
+    Push n;
+    Ask;
+    Eq;
+    If
+      Push "stackError";
+      Log;
+      Push <unit>;
+    Else
+      Push <unit>;
+    End;
+    Push 3;
+    Push n;
+    Ask;
+    Eq;
+    If
+      Push "divError";
+      Log;
+      Push <unit>;
+    Else
+      Push <unit>;
+    End;
+    Push 4;
+    Push n;
+    Ask;
+    Eq;
+    If
+      Push "scopeError";
+      Log;
+      Push <unit>;
+    Else
+      Push <unit>;
+    End;
+    Push "abc";
+    Log;
+    Push n;
+    Ask;
+    Log;
+    Push <unit>;
+  End;
+End;
+
+------------------------------
+
+(["\"abc\""; "20"], 0)

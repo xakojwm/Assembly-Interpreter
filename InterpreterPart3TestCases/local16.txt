@@ -1,0 +1,63 @@
+DefFun gcd a
+  DefFun gcd_b b
+    Begin
+      Push <unit>;
+      Push 0;
+      Push a;
+      Ask;
+      Eq;
+      If
+        Begin
+          Push <unit>;
+          Push b;
+          Ask;
+        End;
+      Else
+        Begin
+          Push <unit>;
+          Push gcd;
+          Ask;
+          Push a;
+          Ask;
+          Push b;
+          Ask;
+          Rem;
+          Call;
+          Push a;
+          Ask;
+          Call;
+        End;
+      End;
+    End;
+  End;
+  Push gcd_b;
+  Ask;
+End;
+Push gcd;
+Ask;
+Push 77;
+Call;
+Push 21;
+Call;
+Log;
+Push <unit>;
+Push gcd;
+Ask;
+Push 77;
+Call;
+Push 121;
+Call;
+Log;
+Push <unit>;
+Push gcd;
+Ask;
+Push 39;
+Call;
+Push 91;
+Call;
+Log;
+Push <unit>;
+
+------------------------------
+
+(["7"; "11"; "13"], 0)

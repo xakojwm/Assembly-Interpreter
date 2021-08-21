@@ -1,0 +1,104 @@
+DefFun pell n
+  Begin
+    Push <unit>;
+    DefFun aux n
+      DefFun aux_a a
+        DefFun aux_b b
+          Begin
+            Push <unit>;
+            Push 0;
+            Push n;
+            Ask;
+            Lte;
+            If
+              Begin
+                Push <unit>;
+                Push a;
+                Ask;
+              End;
+            Else
+              Begin
+                Push <unit>;
+                Push aux;
+                Ask;
+                Push 1;
+                Push n;
+                Ask;
+                Sub;
+                Call;
+                Push b;
+                Ask;
+                Call;
+                Push b;
+                Ask;
+                Push 2;
+                Mul;
+                Push a;
+                Ask;
+                Add;
+                Call;
+              End;
+            End;
+          End;
+        End;
+        Push aux_b;
+        Ask;
+      End;
+      Push aux_a;
+      Ask;
+    End;
+    Push aux;
+    Ask;
+    Push n;
+    Ask;
+    Call;
+    Push 0;
+    Call;
+    Push 1;
+    Call;
+  End;
+End;
+DefFun loop n
+  Begin
+    Push <unit>;
+    Push 12;
+    Push n;
+    Ask;
+    Lte;
+    If
+      Begin
+        Push <unit>;
+        Push n;
+        Ask;
+        Log;
+        Push pell;
+        Ask;
+        Push n;
+        Ask;
+        Call;
+        Log;
+        Push <unit>;
+        Push loop;
+        Ask;
+        Push 1;
+        Push n;
+        Ask;
+        Add;
+        Call;
+        Pop;
+      End;
+    Else
+      Push <unit>;
+    End;
+    Push <unit>;
+  End;
+End;
+Push loop;
+Ask;
+Push 0;
+Call;
+Pop;
+
+------------------------------
+
+(["0"; "0"; "1"; "1"; "2"; "2"; "3"; "5"; "4"; "12"; "5"; "29"; "6"; "70"; "7"; "169"; "8"; "408"; "9"; "985"; "10"; "2378"; "11"; "5741"; "12"; "13860"], 0)

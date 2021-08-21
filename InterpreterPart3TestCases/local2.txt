@@ -1,0 +1,36 @@
+DefFun add2 x
+  DefFun add2_y y
+    Begin
+      Push <unit>;
+      Push y;
+      Ask;
+      Push x;
+      Ask;
+      Add;
+    End;
+  End;
+  Push add2_y;
+  Ask;
+End;
+Push 40;
+Push x;
+Let;
+Push 4;
+Push y;
+Let;
+Push 11;
+Push add2;
+Ask;
+Push x;
+Ask;
+Call;
+Push y;
+Ask;
+Call;
+Div;
+Log;
+Push <unit>;
+
+------------------------------
+
+(["4"], 0)

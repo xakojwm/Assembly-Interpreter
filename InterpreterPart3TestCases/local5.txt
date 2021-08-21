@@ -1,0 +1,93 @@
+DefFun sum_between n
+  DefFun sum_between_m m
+    Begin
+      Push <unit>;
+      Push m;
+      Ask;
+      Push n;
+      Ask;
+      Lte;
+      If
+        Begin
+          Push <unit>;
+          DefFun aux i
+            DefFun aux_acc acc
+              Begin
+                Push <unit>;
+                Push m;
+                Ask;
+                Push i;
+                Ask;
+                Lt;
+                If
+                  Begin
+                    Push <unit>;
+                    Push aux;
+                    Ask;
+                    Push 1;
+                    Push i;
+                    Ask;
+                    Add;
+                    Call;
+                    Push i;
+                    Ask;
+                    Push acc;
+                    Ask;
+                    Add;
+                    Call;
+                  End;
+                Else
+                  Begin
+                    Push <unit>;
+                    Push m;
+                    Ask;
+                    Push acc;
+                    Ask;
+                    Add;
+                  End;
+                End;
+              End;
+            End;
+            Push aux_acc;
+            Ask;
+          End;
+          Push aux;
+          Ask;
+          Push n;
+          Ask;
+          Call;
+          Push 0;
+          Call;
+        End;
+      Else
+        Begin
+          Push <unit>;
+          Push 0;
+        End;
+      End;
+    End;
+  End;
+  Push sum_between_m;
+  Ask;
+End;
+Push sum_between;
+Ask;
+Push 5;
+Call;
+Push 10;
+Call;
+Log;
+Push <unit>;
+Push sum_between;
+Ask;
+Push 10;
+Neg;
+Call;
+Push 10;
+Call;
+Log;
+Push <unit>;
+
+------------------------------
+
+(["45"; "0"], 0)

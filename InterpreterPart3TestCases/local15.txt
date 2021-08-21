@@ -1,0 +1,102 @@
+DefFun fibo i
+  Begin
+    Push <unit>;
+    DefFun aux i
+      DefFun aux_m m
+        DefFun aux_n n
+          Begin
+            Push <unit>;
+            Push 0;
+            Push i;
+            Ask;
+            Lte;
+            If
+              Begin
+                Push <unit>;
+                Push m;
+                Ask;
+              End;
+            Else
+              Begin
+                Push <unit>;
+                Push aux;
+                Ask;
+                Push 1;
+                Push i;
+                Ask;
+                Sub;
+                Call;
+                Push n;
+                Ask;
+                Call;
+                Push n;
+                Ask;
+                Push m;
+                Ask;
+                Add;
+                Call;
+              End;
+            End;
+          End;
+        End;
+        Push aux_n;
+        Ask;
+      End;
+      Push aux_m;
+      Ask;
+    End;
+    Push aux;
+    Ask;
+    Push i;
+    Ask;
+    Call;
+    Push 0;
+    Call;
+    Push 1;
+    Call;
+  End;
+End;
+DefFun loop n
+  Begin
+    Push <unit>;
+    Push 50;
+    Push n;
+    Ask;
+    Lte;
+    If
+      Begin
+        Push <unit>;
+        Push n;
+        Ask;
+        Log;
+        Push fibo;
+        Ask;
+        Push n;
+        Ask;
+        Call;
+        Log;
+        Push <unit>;
+        Push loop;
+        Ask;
+        Push 1;
+        Push n;
+        Ask;
+        Add;
+        Call;
+        Pop;
+      End;
+    Else
+      Push <unit>;
+    End;
+    Push <unit>;
+  End;
+End;
+Push loop;
+Ask;
+Push 0;
+Call;
+Pop;
+
+------------------------------
+
+(["0"; "0"; "1"; "1"; "2"; "1"; "3"; "2"; "4"; "3"; "5"; "5"; "6"; "8"; "7"; "13"; "8"; "21"; "9"; "34"; "10"; "55"; "11"; "89"; "12"; "144"; "13"; "233"; "14"; "377"; "15"; "610"; "16"; "987"; "17"; "1597"; "18"; "2584"; "19"; "4181"; "20"; "6765"; "21"; "10946"; "22"; "17711"; "23"; "28657"; "24"; "46368"; "25"; "75025"; "26"; "121393"; "27"; "196418"; "28"; "317811"; "29"; "514229"; "30"; "832040"; "31"; "1346269"; "32"; "2178309"; "33"; "3524578"; "34"; "5702887"; "35"; "9227465"; "36"; "14930352"; "37"; "24157817"; "38"; "39088169"; "39"; "63245986"; "40"; "102334155"; "41"; "165580141"; "42"; "267914296"; "43"; "433494437"; "44"; "701408733"; "45"; "1134903170"; "46"; "1836311903"; "47"; "2971215073"; "48"; "4807526976"; "49"; "7778742049"; "50"; "12586269025"], 0)

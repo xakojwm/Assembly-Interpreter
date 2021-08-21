@@ -1,0 +1,42 @@
+DefFun bad x
+  Begin
+    Push <unit>;
+    Push 0;
+    Push 0;
+    Div;
+    Pop;
+  End;
+End;
+DefFun trivial x
+  Begin
+    Push <unit>;
+    Push 1;
+  End;
+End;
+Try
+  Begin
+    Push <unit>;
+    Push bad;
+    Ask;
+    Push 10;
+    Call;
+    Pop;
+  End;
+Catch
+  Push n;
+  Let;
+  Begin
+    Push <unit>;
+    Push trivial;
+    Ask;
+    Push bad;
+    Ask;
+    Call;
+    Log;
+    Push <unit>;
+  End;
+End;
+
+------------------------------
+
+(["1"], 0)

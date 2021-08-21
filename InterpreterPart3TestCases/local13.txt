@@ -1,0 +1,63 @@
+DefFun main x
+  Begin
+    Push <unit>;
+    Push 4;
+    Push 4;
+    Add;
+    Push 4;
+    Push 4;
+    Add;
+    Div;
+    Push one;
+    Let;
+    Push 4;
+    Push 4;
+    Div;
+    Push 4;
+    Push 4;
+    Div;
+    Add;
+    Push two;
+    Let;
+    Push 4;
+    Push 4;
+    Push 4;
+    Push 4;
+    Add;
+    Add;
+    Div;
+    Push three;
+    Let;
+    Push 4;
+    Push 4;
+    Push 4;
+    Push 4;
+    Sub;
+    Mul;
+    Add;
+    Push four;
+    Let;
+    Push one;
+    Ask;
+    Log;
+    Push two;
+    Ask;
+    Log;
+    Push three;
+    Ask;
+    Log;
+    Push four;
+    Ask;
+    Log;
+    Push <unit>;
+  End;
+End;
+Push main;
+Ask;
+Push <unit>;
+Call;
+Pop;
+
+------------------------------
+
+(["1"; "2"; "3"; "4"], 0)

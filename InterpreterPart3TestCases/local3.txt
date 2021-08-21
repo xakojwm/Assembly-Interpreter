@@ -1,0 +1,42 @@
+Try
+  Begin
+    Push <unit>;
+    Try
+      Begin
+        Push <unit>;
+        Push 0;
+        Push 0;
+        Div;
+        Pop;
+      End;
+    Catch
+      Push n;
+      Let;
+      Begin
+        Push <unit>;
+        Push n;
+        Ask;
+        Log;
+        Push <unit>;
+        Push y;
+        Ask;
+        Push n;
+        Let;
+      End;
+    End;
+  End;
+Catch
+  Push n;
+  Let;
+  Begin
+    Push <unit>;
+    Push n;
+    Ask;
+    Log;
+    Push <unit>;
+  End;
+End;
+
+------------------------------
+
+(["3"; "4"], 0)

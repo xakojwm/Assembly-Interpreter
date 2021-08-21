@@ -1,0 +1,118 @@
+DefFun Acker m
+  DefFun Acker_n n
+    Begin
+      Push <unit>;
+      Push 0;
+      Push m;
+      Ask;
+      Eq;
+      If
+        Begin
+          Push <unit>;
+          Push 1;
+          Push n;
+          Ask;
+          Add;
+        End;
+      Else
+        Begin
+          Push <unit>;
+          Push 0;
+          Push n;
+          Ask;
+          Eq;
+          If
+            Begin
+              Push <unit>;
+              Push Acker;
+              Ask;
+              Push 1;
+              Push m;
+              Ask;
+              Sub;
+              Call;
+              Push 1;
+              Call;
+            End;
+          Else
+            Begin
+              Push <unit>;
+              Push Acker;
+              Ask;
+              Push 1;
+              Push m;
+              Ask;
+              Sub;
+              Call;
+              Push Acker;
+              Ask;
+              Push m;
+              Ask;
+              Call;
+              Push 1;
+              Push n;
+              Ask;
+              Sub;
+              Call;
+              Call;
+            End;
+          End;
+        End;
+      End;
+    End;
+  End;
+  Push Acker_n;
+  Ask;
+End;
+Push Acker;
+Ask;
+Push 3;
+Call;
+Push 0;
+Call;
+Log;
+Push <unit>;
+Push Acker;
+Ask;
+Push 3;
+Call;
+Push 1;
+Call;
+Log;
+Push <unit>;
+Push Acker;
+Ask;
+Push 3;
+Call;
+Push 2;
+Call;
+Log;
+Push <unit>;
+Push Acker;
+Ask;
+Push 3;
+Call;
+Push 3;
+Call;
+Log;
+Push <unit>;
+Push Acker;
+Ask;
+Push 3;
+Call;
+Push 4;
+Call;
+Log;
+Push <unit>;
+Push Acker;
+Ask;
+Push 3;
+Call;
+Push 5;
+Call;
+Log;
+Push <unit>;
+
+------------------------------
+
+(["5"; "13"; "29"; "61"; "125"; "253"], 0)

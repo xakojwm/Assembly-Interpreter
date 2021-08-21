@@ -1,0 +1,25 @@
+DefFun add1 x
+  Begin
+    Push <unit>;
+    Push 1;
+    Push x;
+    Ask;
+    Add;
+  End;
+End;
+Push 20;
+Push a;
+Let;
+Push "add1";
+Log;
+Push add1;
+Ask;
+Push a;
+Ask;
+Call;
+Log;
+Push <unit>;
+
+------------------------------
+
+(["\"add1\""; "21"], 0)
